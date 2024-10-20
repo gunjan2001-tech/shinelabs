@@ -1,0 +1,148 @@
+@media only screen and (min-width:200px ) and (max-width:575px){
+  .nav-2 img{
+    display: none;
+  
+  }
+  .cloud-1 {
+    top: 34%;
+    left: 20%;
+    width: 100px;
+    height: 
+    144.7px;
+  }
+  .cloud-2 {
+    top: 34%;
+    left: -21%;
+    width: 
+  100px ;
+    height: 
+    100px
+  }
+  .carosel1-item{
+    padding: 0 1.5rem;
+  }
+}
+
+
+@media only screen and (min-width:576px ) and (max-width:767px){
+  .carosel1-item {
+    flex: 0 0 40%;
+}
+
+
+
+}
+
+
+
+
+
+@media only screen and (min-width:769px ) and (max-width:1024px){
+  
+  .claim-2 h1{
+    color: #F8AD79;
+    font-size: 30px ;
+    font-weight: 600;
+    line-height: 30px ;
+    padding: 10px 0px;
+  }
+  .claim-2 span{
+    font-family: 'Milk And Honey Regular';
+  font-weight: 400;
+  font-size: 32px ;
+  }
+  .claim-2 p{
+    padding-top: 2px ;
+    padding-bottom: 15px ;
+  
+  font-weight: 600;
+  font-size: 15px ;
+  color: white;
+  line-height: 25px ;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .discription h1{
+    font-family: 'Milk And Honey Regular';
+    font-weight: 400;
+    font-size: 25px ;
+    line-height: 30px ;
+    white-space: nowrap;
+    padding-bottom: 0px;
+   }
+    .discription h5{
+      font-size: 14px;
+      line-height: 20.81px;
+      font-weight: 600;
+      text-indent: -14px;
+    margin-left: 27px;
+      
+    }
+    .details{
+      padding: 0px;
+    }
+    .choclate{
+      padding-top: 100px ;
+    }
+    .jar-img{
+      padding-top: 75px ;
+
+    }
+    .review h1{
+      color: #422410;
+      font-weight: 700;
+      font-size: 40px ;
+      font-family: 'Milk And Honey Regular';
+    
+    
+    }
+
+  }
+
+
+
+
+/* carousel  */
+
+
+@media (min-width: 768px) {
+  .pm-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+  .info {
+      width: 30%;
+      margin-bottom: 0;
+  }
+  .carosel1 {
+      width: 100%;
+  }
+  .carosel1-item {
+      flex: 0 0 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carosel1-item {
+      flex: 0 0 33.333%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carosel1-item {
+      flex: 0 0 25%;
+  }
+}
