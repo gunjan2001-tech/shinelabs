@@ -24,6 +24,29 @@
   .sales-row{
     padding-left: 0px ;
   }
+  .light-out br{
+    display: none;
+  }
+  .light-out b{
+    font-size: 31px;
+    line-height: 26px;
+  }
+  .light-out h1{
+    font-size: 31px;
+    line-height: 33px;
+  }
+  .next-button2{
+    right: 18px ;
+  }
+  #one-time-purchase, #subscribe-save {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: -20px ;
+    background-color: #F6F6F6;
+    border: none;
+    
+  }
 }
 
 

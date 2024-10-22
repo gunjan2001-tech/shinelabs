@@ -251,6 +251,89 @@ referrerpolicy="no-referrer"
                     </div>
                     
                 </div>
+                <div class="carosel1-item">
+                    <div class="card">
+                        <div><img src="/images/review/cs1.png" alt="" class="card-logo-img invest-img"></div>
+                        <div class="d-flex justify-content-between align-items-center py-2 px-2">
+                          <div class="px-3">
+                            <h6><b>Justin Pham </b>                            <img src="/images/review/Frame 266.png" alt="">
+                            </h6>
+                          </div>
+                          <div class="px-4">
+                            <img src="/images/review/Frame 105 (1).png" alt="">
+                          </div>
+                          
+
+                        </div>
+                        <div class="px-4"><h5>“Fell Asleep Super Fast”</h5></div>
+                        <div class="px-4"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda labore laudantium optio error debitis? Aliquid, provident sed magnam nostrum molestias earum placeat hic beatae </p></div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="carosel1-item">
+                    <div class="card">
+                        <div><img src="/images/review/cs2.png" alt="" class="card-logo-img invest-img"></div>
+                        <div class="d-flex justify-content-between align-items-center py-2 px-2">
+                          <div class="px-3">
+                            <h6><b>Justin Pham </b>                            <img src="/images/review/Frame 266.png" alt="">
+                            </h6>
+                          </div>
+                          <div class="px-4">
+                            <img src="/images/review/Frame 105 (1).png" alt="">
+                          </div>
+                          
+
+                        </div>
+                        <div class="px-4"><h5>“Fell Asleep Super Fast”</h5></div>
+                        <div class="px-4"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda labore laudantium optio error debitis? Aliquid, provident sed magnam nostrum molestias earum placeat hic beatae </p></div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="carosel1-item">
+                    <div class="card">
+                        <div><img src="/images/review/cs3.png" alt="" class="card-logo-img invest-img"></div>
+                        <div class="d-flex justify-content-between align-items-center py-2 px-2">
+                          <div class="px-3">
+                            <h6><b>Justin Pham </b>                            <img src="/images/review/Frame 266.png" alt="">
+                            </h6>
+                          </div>
+                          <div class="px-4">
+                            <img src="/images/review/Frame 105 (1).png" alt="">
+                          </div>
+                          
+
+                        </div>
+                        <div class="px-4"><h5>“Fell Asleep Super Fast”</h5></div>
+                        <div class="px-4"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda labore laudantium optio error debitis? Aliquid, provident sed magnam nostrum molestias earum placeat hic beatae </p></div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="carosel1-item">
+                    <div class="card">
+                        <div><img src="/images/review/cs1.png" alt="" class="card-logo-img invest-img"></div>
+                        <div class="d-flex justify-content-between align-items-center py-2 px-2">
+                          <div class="px-3">
+                            <h6><b>Justin Pham </b>                            <img src="/images/review/Frame 266.png" alt="">
+                            </h6>
+                          </div>
+                          <div class="px-4">
+                            <img src="/images/review/Frame 105 (1).png" alt="">
+                          </div>
+                          
+
+                        </div>
+                        <div class="px-4"><h5>“Fell Asleep Super Fast”</h5></div>
+                        <div class="px-4"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda labore laudantium optio error debitis? Aliquid, provident sed magnam nostrum molestias earum placeat hic beatae </p></div>
+                        
+                    </div>
+                    
+                </div>
                 
                 
                
@@ -269,7 +352,7 @@ referrerpolicy="no-referrer"
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
           <div>
-            <img src="/images/scientitst section/image 188 (1).png" alt="" class="img-fluid pe-4
+            <img src="/images/scientitst section/image 188 (1).png" alt="" class="img-fluid 
             ">
           </div>
         </div>
@@ -366,7 +449,7 @@ referrerpolicy="no-referrer"
   <p>It's a <span>natural</span> mixture of essential vitamins, minerals and amino acids that deal with the root cause of restlessness and insomnia, by balancing those very hormones/chemicals that govern your sleep cycles, like <span>serotonin</span>, <span>melatonin</span> , and <span>gaba.</span></p>
 </div>
 <div><p>This way you get to experience and enjoy the the kind of better, high quality sleep you want and need, <span>including:</span></p></div>
-<div class="shop-button pt-5 pb-5">
+<div class="shop-button pt-5 pb-5 d-flex justify-content-center">
   <a href="#">Shop now → </a>
  </div>
     </div>
@@ -561,7 +644,7 @@ referrerpolicy="no-referrer"
               
               
           </div>
-          <button class="next-button">›</button>
+          <button class="next-button next-button2">›</button>
       </div>
   </div>
   </section>
@@ -902,54 +985,61 @@ referrerpolicy="no-referrer"
 </footer>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/app.js"></script>
+<script>
+  const carosel1 = document.querySelector('.carosel1-container');
+const nextButton = document.querySelector('.next-button');
+const prevButton = document.querySelector('.prev-button');
+let currentIndex = 0;
 
-    <script>
-      const carosel1 = document.querySelector('.carosel1-container');
-       const nextButton = document.querySelector('.next-button');
-       const prevButton = document.querySelector('.prev-button');
-       let currentIndex = 0;
+function updatecarosel1() {
+    const screenWidth = window.innerWidth;
+    let itemWidth;
 
-       function updatecarosel1() {
-           const screenWidth = window.innerWidth;
-           let itemWidth;
+    if (screenWidth >= 1200) {
+        itemWidth = 25;
+    } else if (screenWidth >= 1024) {
+        itemWidth = 33.333;
+    } else if (screenWidth >= 768) {
+        itemWidth = 50;
+    } else {
+        itemWidth = 100;
+    }
 
-           if (screenWidth >= 1200) {
-               itemWidth = 25;
-           } else if (screenWidth >= 1024) {
-               itemWidth = 33.333;
-           } else if (screenWidth >= 768) {
-               itemWidth = 50;
-           } else {
-               itemWidth = 100;
-           }
+    // Carousel transition
+    carosel1.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+}
 
-           carosel1.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
-       }
+function getVisibleItems() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1200) return 4;
+    if (screenWidth >= 1024) return 3;
+    if (screenWidth >= 768) return 2;
+    return 1;
+}
 
-       function getVisibleItems() {
-           const screenWidth = window.innerWidth;
-           if (screenWidth >= 1200) return 4;
-           if (screenWidth >= 1024) return 3;
-           if (screenWidth >= 768) return 2;
-           return 1;
-       }
+nextButton.addEventListener('click', () => {
+    const totalItems = 5; // Assuming there are 5 items/cards
+    const visibleItems = getVisibleItems();
 
-       nextButton.addEventListener('click', () => {
-           const totalItems = 5;
-           const visibleItems = getVisibleItems();
-           currentIndex = (currentIndex + 1) % (totalItems - visibleItems + 1);
-           updatecarosel1();
-       });
+    // Circular navigation logic for 'Next' button
+    currentIndex = (currentIndex + 1) % totalItems;
+    
+    updatecarosel1();
+});
 
-       prevButton.addEventListener('click', () => {
-           const totalItems = 5;
-           const visibleItems = getVisibleItems();
-           currentIndex = (currentIndex - 1 + (totalItems - visibleItems + 1)) % (totalItems - visibleItems + 1);
-           updatecarosel1();
-       });
+prevButton.addEventListener('click', () => {
+    const totalItems = 5; // Assuming there are 5 items/cards
+    const visibleItems = getVisibleItems();
 
-       window.addEventListener('resize', updatecarosel1);
-       updatecarosel1();
-   </script>
+    // Circular navigation logic for 'Previous' button
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    
+    updatecarosel1();
+});
+
+window.addEventListener('resize', updatecarosel1);
+updatecarosel1();
+
+</script>
   
   </body>

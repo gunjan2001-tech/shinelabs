@@ -2,44 +2,70 @@
 
 // for carousel2  
 
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel2 = document.querySelector('.carosuel2 .carosel1-container');
-  const nextButton2 = document.querySelector('.carosuel2 .next-button');
-  const prevButton2 = document.querySelector('.carosuel2 .prev-button');
-  let currentIndex2 = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  const carousel = document.querySelector('.carosuel2 .carosel1-container');
+  const nextButton = document.querySelector('.carosuel2 .next-button');
+  const prevButton = document.querySelector('.carosuel2 .prev-button');
+  
+  // Get original cards
+  const originalCards = Array.from(carousel.children);
+  const cardWidth = originalCards[0].offsetWidth;
+  const totalCards = originalCards.length;
 
-  function updateCarousel2() {
-      const screenWidth = window.innerWidth;
-      let itemWidth;
+  // Clone the first and last card
+  const firstClone = originalCards[0].cloneNode(true);
+  const lastClone = originalCards[totalCards - 1].cloneNode(true);
 
-      // For this carousel, we'll keep it to one item per view regardless of screen size
-      itemWidth = 100;
+  // Add clones to the carousel
+  carousel.appendChild(firstClone);
+  carousel.insertBefore(lastClone, originalCards[0]);
 
-      carousel2.style.transform = `translateX(-${currentIndex2 * itemWidth}%)`;
+  let currentIndex = 1; // Start at the first real card (after the clone)
+  const totalItems = carousel.children.length;
+
+  function getOffset() {
+      return -currentIndex * cardWidth;
   }
 
-  function getVisibleItems2() {
-      // Always return 1 as we want to show only one item at a time
-      return 1;
+  function updateCarousel(instant = false) {
+      carousel.style.transition = instant ? 'none' : 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(${getOffset()}px)`;
   }
 
-  nextButton2.addEventListener('click', () => {
-      const totalItems = carousel2.children.length;
-      const visibleItems = getVisibleItems2();
-      currentIndex2 = (currentIndex2 + 1) % totalItems;
-      updateCarousel2();
+  function handleTransitionEnd() {
+      if (currentIndex === 0) {
+          currentIndex = totalCards;
+          updateCarousel(true);
+      } else if (currentIndex === totalItems - 1) {
+          currentIndex = 1;
+          updateCarousel(true);
+      }
+  }
+
+  nextButton.addEventListener('click', () => {
+      if (currentIndex >= totalItems - 1) return;
+      currentIndex++;
+      updateCarousel();
   });
 
-  prevButton2.addEventListener('click', () => {
-      const totalItems = carousel2.children.length;
-      const visibleItems = getVisibleItems2();
-      currentIndex2 = (currentIndex2 - 1 + totalItems) % totalItems;
-      updateCarousel2();
+  prevButton.addEventListener('click', () => {
+      if (currentIndex <= 0) return;
+      currentIndex--;
+      updateCarousel();
   });
 
-  window.addEventListener('resize', updateCarousel2);
-  updateCarousel2();
+  carousel.addEventListener('transitionend', handleTransitionEnd);
+
+  // Update carousel on window resize
+  window.addEventListener('resize', () => {
+      cardWidth = originalCards[0].offsetWidth;
+      updateCarousel(true);
+  });
+
+  // Initialize the carousel position
+  updateCarousel(true);
 });
+
 
 
 // for buttons 

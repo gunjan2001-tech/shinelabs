@@ -23,3 +23,102 @@
     </div>
 </body>
 </html>
+
+<script>
+    const carosel1 = document.querySelector('.carosel1-container');
+     const nextButton = document.querySelector('.next-button');
+     const prevButton = document.querySelector('.prev-button');
+     let currentIndex = 0;
+
+     function updatecarosel1() {
+         const screenWidth = window.innerWidth;
+         let itemWidth;
+
+         if (screenWidth >= 1200) {
+             itemWidth = 25;
+         } else if (screenWidth >= 1024) {
+             itemWidth = 33.333;
+         } else if (screenWidth >= 768) {
+             itemWidth = 50;
+         } else {
+             itemWidth = 100;
+         }
+
+         carosel1.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+     }
+
+     function getVisibleItems() {
+         const screenWidth = window.innerWidth;
+         if (screenWidth >= 1200) return 4;
+         if (screenWidth >= 1024) return 3;
+         if (screenWidth >= 768) return 2;
+         return 1;
+     }
+
+     nextButton.addEventListener('click', () => {
+         const totalItems = 5;
+         const visibleItems = getVisibleItems();
+         currentIndex = (currentIndex + 1) % (totalItems - visibleItems + 1);
+         updatecarosel1();
+     });
+
+     prevButton.addEventListener('click', () => {
+         const totalItems = 5;
+         const visibleItems = getVisibleItems();
+         currentIndex = (currentIndex - 1 + (totalItems - visibleItems + 1)) % (totalItems - visibleItems + 1);
+         updatecarosel1();
+     });
+
+     window.addEventListener('resize', updatecarosel1);
+     updatecarosel1();
+ </script>
+
+
+
+
+
+
+
+
+
+<!--  -->
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel2 = document.querySelector('.carosuel2 .carosel1-container');
+    const nextButton2 = document.querySelector('.carosuel2 .next-button');
+    const prevButton2 = document.querySelector('.carosuel2 .prev-button');
+    let currentIndex2 = 0;
+  
+    function updateCarousel2() {
+        const screenWidth = window.innerWidth;
+        let itemWidth;
+  
+        // For this carousel, we'll keep it to one item per view regardless of screen size
+        itemWidth = 100;
+  
+        carousel2.style.transform = `translateX(-${currentIndex2 * itemWidth}%)`;
+    }
+  
+    function getVisibleItems2() {
+        // Always return 1 as we want to show only one item at a time
+        return 1;
+    }
+  
+    nextButton2.addEventListener('click', () => {
+        const totalItems = carousel2.children.length;
+        const visibleItems = getVisibleItems2();
+        currentIndex2 = (currentIndex2 + 1) % totalItems;
+        updateCarousel2();
+    });
+  
+    prevButton2.addEventListener('click', () => {
+        const totalItems = carousel2.children.length;
+        const visibleItems = getVisibleItems2();
+        currentIndex2 = (currentIndex2 - 1 + totalItems) % totalItems;
+        updateCarousel2();
+    });
+  
+    window.addEventListener('resize', updateCarousel2);
+    updateCarousel2();
+  });
